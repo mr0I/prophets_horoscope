@@ -6,7 +6,7 @@ function MYPH_activate_function()
     global $wpdb;
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
-    $horoscopes_tbl = $wpdb->prefix . HOROSCOPES_TBL;
+    $horoscopes_tbl = $wpdb->prefix . MYPH_HOROSCOPES_TBL;
     $createHoroscopesTable =
         "
 		CREATE TABLE IF NOT EXISTS `{$horoscopes_tbl}` (

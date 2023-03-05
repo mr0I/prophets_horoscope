@@ -1,13 +1,11 @@
 <?php defined('ABSPATH') or die('No script kiddies please!');
 
 
-// add_action('init', function () {
-//     add_shortcode('insert_rsp', 'insertRaspi');
-// });
+add_action('init', function () {
+    add_shortcode('insert_horoscope', 'insertHoroscope');
+});
 
-// function insertRaspi($atts, $content = null)
-// {
-//     ob_start();
-//     include(RSP_ROOTDIR . './site/templates/customPostType_widget.php');
-//     return do_shortcode(ob_get_clean());
-// }
+function insertHoroscope($atts, $content = null)
+{
+    echo '<button onclick="loadRandomHoroscope(event)">Go!</button>';
+}
