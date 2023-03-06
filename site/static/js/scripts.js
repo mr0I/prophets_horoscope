@@ -3,9 +3,10 @@ jQuery(document).ready(function ($) {
     window.jq = $;
 });
 
+
 function loadRandomHoroscope(event) {
     event.preventDefault();
-
+    const nonce = document.getElementById('horoscope_nonce').value;
 
     jq.ajax({
         url: MYPH_SITE_AJAX.AJAXURL,
@@ -13,7 +14,7 @@ function loadRandomHoroscope(event) {
         data: {
             SECURITY: MYPH_SITE_AJAX.SECURITY,
             action: 'fetchHoroscopes',
-            //nonce: nonce,
+            nonce: nonce
         },
         beforeSend: () => {
             // jq('.loader-spinner').css('display', 'block');

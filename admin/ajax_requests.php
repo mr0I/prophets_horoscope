@@ -3,17 +3,27 @@
 
 function fetchHoroscopes_callback()
 {
-    // if (!wp_verify_nonce($_POST['nonce'], 'sp-shortcode-nonce') || !check_ajax_referer('OwpCojMcdGJ-k-o', 'SECURITY')) {
-    //     wp_send_json_error('Forbidden', 403);
-    //     exit();
-    // }
+    if (
+        !wp_verify_nonce($_POST['nonce'], 'horoscope-nonce')
+        || !check_ajax_referer('Dnt3dUF8U4FRBNt3', 'SECURITY')
+    ) {
+        wp_send_json_error('Forbidden', 403);
+        exit();
+    }
 
     global $wpdb;
     $tbl = $wpdb->prefix . MYPH_HOROSCOPES_TBL;
-    $query = $wpdb->prepare("SELECT COUNT(*) FROM $tbl ");
-    $horoscopesCount = $wpdb->get_var($query);
+    $horoscopesIdsArray = [];
+    $getIdsQuery = $wpdb->prepare("SELECT id FROM $tbl");
+    $horoscopesIds = $wpdb->get_results($getIdsQuery);
+    foreach ($horoscopesIds as $id) {
+        $horoscopesIdsArray[] = intval($id->id);
+    }
+    $randomId = array_rand($horoscopesIdsArray, 1);
+    $getOneHoroscopeQuery = $wpdb->prepare("SELECT * FROM $tbl WHERE id=%d", array($randomId));
+    $selectedHoroscope = $wpdb->get_row($getOneHoroscopeQuery);
 
-    wp_send_json(['data' => $horoscopesCount], 200);
+    wp_send_json(['data' => $selectedHoroscope], 200);
     exit();
 }
 add_action('wp_ajax_fetchHoroscopes', 'fetchHoroscopes_callback');

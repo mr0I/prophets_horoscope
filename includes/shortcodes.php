@@ -7,5 +7,7 @@ add_action('init', function () {
 
 function insertHoroscope($atts, $content = null)
 {
-    echo '<button onclick="loadRandomHoroscope(event)">Go!</button>';
+    ob_start();
+    include(MYPH_ROOTDIR . 'site/templates/horoscopeWidget.php');
+    return do_shortcode(ob_get_clean());
 }
