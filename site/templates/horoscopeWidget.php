@@ -3,6 +3,10 @@
 
 <section class="horoscope">
     <div class="horoscope-content">
+        <h3 class="horoscope-content__title"><?= __('Prophets Horoscope', 'prophets_horoscope') ?></h3>
+        <figure>
+            <img src="<?= plugins_url('static/images/anbia_img.png', dirname(__FILE__)) ?>" alt="<?= __('Prophets Horoscope Picture', 'prophets_horoscope') ?>">
+        </figure>
         <p>
             بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ﴿۱﴾
             الْحَمْدُ للّهِ رَبِّ الْعَالَمِينَ ﴿۲﴾ الرَّحْمنِ الرَّحِيمِ ﴿۳﴾
@@ -10,7 +14,7 @@
             اهدِنَا الصِّرَاطَ المُستَقِيمَ ﴿۶﴾
             صِرَاطَ الَّذِينَ أَنعَمتَ عَلَيهِمْ غَيرِ المَغضُوبِ عَلَيهِمْ وَلاَ الضَّالِّينَ ﴿۷﴾
         </p>
-
+        <p><strong><?= __('niat', 'prophets_horoscope') ?></strong></p>
         <button onclick="loadRandomHoroscope(event)">Show</button>
         <input type="hidden" name="horoscope_nonce" id="horoscope_nonce" value="<?= wp_create_nonce('horoscope-nonce') ?>">
     </div>
