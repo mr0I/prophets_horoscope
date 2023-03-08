@@ -14,7 +14,7 @@
             اهدِنَا الصِّرَاطَ المُستَقِيمَ ﴿۶﴾
             صِرَاطَ الَّذِينَ أَنعَمتَ عَلَيهِمْ غَيرِ المَغضُوبِ عَلَيهِمْ وَلاَ الضَّالِّينَ ﴿۷﴾
         </p>
-        <p><strong><?= __('Make an intention and click on the button', 'prophets_horoscope') ?></strong></p>
+        <p class="horoscope-content__niat"><?= __('Make an intention and click on the button', 'prophets_horoscope') ?></p>
         <button class="horoscope-content__submitBtn" onclick="loadRandomHoroscope(event)">
             <?= __('Prophets online horoscope', 'prophets_horoscope') ?>
         </button>

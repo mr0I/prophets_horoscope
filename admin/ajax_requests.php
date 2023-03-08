@@ -23,6 +23,10 @@ function fetchHoroscopes_callback()
     $getOneHoroscopeQuery = $wpdb->prepare("SELECT * FROM $tbl WHERE id=%d", array($randomId));
     $selectedHoroscope = $wpdb->get_row($getOneHoroscopeQuery);
 
+    $explode = explode('❆❆❆', $selectedHoroscope->h_dobeity);
+    $selectedHoroscope->h_beitOne = $explode[0];
+    $selectedHoroscope->h_beitTwo = $explode[1];
+
     wp_send_json(['data' => $selectedHoroscope], 200);
     exit();
 }

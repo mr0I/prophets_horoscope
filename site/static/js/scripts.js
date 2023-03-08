@@ -23,6 +23,21 @@ function loadRandomHoroscope(event) {
         success: (res, xhr) => {
             if (xhr) {
                 const answerSection = document.getElementById('horoscope_answer_section');
+                let luckyDayTextClass = '';
+                switch (res.data.h_result) {
+                    case 'عالی':
+                        luckyDayTextClass = 'text-green';
+                        break;
+                    case 'خوب':
+                        luckyDayTextClass = 'text-blue';
+                        break;
+                    case 'بد':
+                        luckyDayTextClass = 'text-red';
+                        break;
+                    default:
+                        break;
+                }
+
                 jq(answerSection).append(`
                     <div class="horoscope-content">
                         <figure>
@@ -31,12 +46,14 @@ function loadRandomHoroscope(event) {
                         <h3 class="horoscope-content__title" id="horoscope_answer_title">
                             ${res.data.h_name}
                         </h3>
-                        <p>${MYPH_SITE_AJAX.HOROSCOPE_RESULT}&nbsp;&nbsp;<span class="text-green">${res.data.h_result}</span>&nbsp;</p>
+                        <p>${MYPH_SITE_AJAX.HOROSCOPE_RESULT}&nbsp;&nbsp;<span class="${luckyDayTextClass}" style="font-weight: 600;">${res.data.h_result}</span>&nbsp;</p>
                         ${(res.data.h_luckyday != '-' && res.data.h_luckyday != '')
-                        ? `<p>${MYPH_SITE_AJAX.LUCKY_DAY_FOR_YOU}&nbsp;&nbsp;<span class="text-red">${res.data.h_luckyday}</span>&nbsp;</p>`
+                        ? `<p>${MYPH_SITE_AJAX.LUCKY_DAY_FOR_YOU}&nbsp;&nbsp;<span class="text-default">${res.data.h_luckyday}</span>&nbsp;</p>`
                         : ''
                     }
-                        <p class="horoscope-content__dobeity">${res.data.h_dobeity}</p>
+                        <p class="horoscope-content__dobeity">${res.data.h_beitOne}</p>
+                        <p style="margin:0"><span class="text-green">❆❆❆</span></p>
+                        <p class="horoscope-content__dobeity">${res.data.h_beitTwo}</p>
                         <p class="horoscope-content__desc">${res.data.h_description}</p>
                         <button class="horoscope-content__submitBtn" onclick="horoscopeAgain(event)">
                             ${MYPH_SITE_AJAX.HOROSCOPE_AGAIN}
@@ -58,13 +75,12 @@ function loadRandomHoroscope(event) {
         },
         timeout: MYPH_SITE_AJAX.REQUEST_TIMEOUT
     });
-
 }
 
 function horoscopeAgain(event) {
     event.preventDefault();
     const answerSection = document.getElementById('horoscope_answer_section');
     answerSection.innerHTML = '';
-    jq('.horoscope').slideDown(400);
+    jq('.horoscope').slideDown(300);
     jq(answerSection).slideUp(400);
 }
