@@ -34,6 +34,8 @@ add_action('wp_enqueue_scripts', function () {
         'AJAXURL' => admin_url('admin-ajax.php'),
         'SECURITY' => wp_create_nonce('Dnt3dUF8U4FRBNt3'),
         'REQUEST_TIMEOUT' => 30000,
+        'SUBMIT_BTN_TXT' => __('Prophets online horoscope', 'prophets_horoscope'),
+        'WAITING_TXT' => __('Please Wait...', 'prophets_horoscope')
     ));
 });
 

@@ -1,7 +1,8 @@
 .horoscope {
     max-width: 450px;
     margin: 16px auto;
-    font-family: inherit;
+    font-family: vazir;
+    // font-family: inherit;
 
     .horoscope-content {
         width: 100%;
@@ -34,14 +35,69 @@
         }
 
         .horoscope-content__submitBtn {
-            margin: 20px auto;
-            padding: 6px 24px;
-            background-color: red;
-            border: none;
+            margin-bottom: 20px;
+            padding: 5px 50px;
+            background-color: $btnBackColor;
+            border: 2px solid $backgroundColor;
             border-radius: 4px;
-            color: #fff;
+            color: $textColorNormal;
             font-weight: 500;
             cursor: pointer;
+            box-shadow: 0 5px 5px rgb(0 0 0 / 15%);
+            font-size: 1em;
+            font-weight: 600;
+            font-family: inherit;
+
+            &:hover {
+                box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+            }
         }
+    }
+}
+
+.horoscope#horoscope_answer {
+    .horoscope-content {
+        // h3 {
+        //     color: $textColorDark;
+        //     font-weight: 700;
+        //     font-size: 2em;
+        //     font-family: inherit;
+        // }
+
+        img {
+            max-width: unset;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        // p.horoscope-content__aye {
+        //     color: $textColorLight;
+        //     font-weight: lighter;
+        //     padding: 0 70px;
+        //     font-size: small;
+        // }
+
+        // .horoscope-content__submitBtn {
+        //     margin-bottom: 20px;
+        //     padding: 5px 50px;
+        //     background-color: $btnBackColor;
+        //     border: 2px solid $backgroundColor;
+        //     border-radius: 4px;
+        //     color: $textColorNormal;
+        //     font-weight: 500;
+        //     cursor: pointer;
+        //     box-shadow: 0 5px 5px rgb(0 0 0 / 15%);
+        //     font-size: 1em;
+        //     font-weight: 600;
+        //     font-family: inherit;
+
+        //     &:hover {
+        //         box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+        //     }
+        // }
     }
 }
