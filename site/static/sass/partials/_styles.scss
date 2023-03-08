@@ -1,8 +1,8 @@
 .horoscope {
     max-width: 400px;
     margin: 16px auto;
-    font-family: vazir;
-    // font-family: inherit;
+    // font-family: vazir;
+    font-family: inherit;
 
     .horoscope-content {
         width: 100%;
@@ -103,7 +103,6 @@
         p.horoscope-content__dobeity {
             color: $dangerColor;
             font-weight: lighter;
-            // max-width: 145px;
             font-size: x-small;
             margin: 0;
         }
