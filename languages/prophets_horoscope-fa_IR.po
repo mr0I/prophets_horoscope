@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Horoscope of the prophets\n"
-"POT-Creation-Date: 2023-03-07 20:20+0330\n"
-"PO-Revision-Date: 2023-03-08 10:21+0330\n"
+"POT-Creation-Date: 2023-03-08 11:57+0330\n"
+"PO-Revision-Date: 2023-03-08 11:58+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -21,21 +21,37 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
+#: main.php:38 site/templates/horoscopeWidget.php:19
+msgid "Prophets online horoscope"
+msgstr "فال آنلاین انبیا"
+
+#: main.php:39
+msgid "Please Wait..."
+msgstr "شکیبا باشید..."
+
+#: main.php:41 site/templates/horoscopeWidget.php:8
+msgid "Prophets Horoscope Picture"
+msgstr "تصویر فال انبیا"
+
+#: main.php:42
+msgid "Horoscope Result:"
+msgstr "نتیجه فال:"
+
+#: main.php:43
+msgid "Lucky Day for you:"
+msgstr "روز خوش یمن برای شما:"
+
+#: main.php:44
+msgid "Horoscope Again"
+msgstr "فال مجدد انبیا"
+
 #: site/templates/horoscopeWidget.php:6
 msgid "Prophets Horoscope"
 msgstr "فال انبیای الهی"
 
-#: site/templates/horoscopeWidget.php:8
-msgid "Prophets Horoscope Picture"
-msgstr "تصویر فال انبیا"
-
 #: site/templates/horoscopeWidget.php:17
 msgid "Make an intention and click on the button"
 msgstr "نیت کرده و اشاره ای بنمایید"
-
-#: site/templates/horoscopeWidget.php:18
-msgid "Prophets online horoscope"
-msgstr "فال آنلاین انبیا"
 
 #. Plugin Name of the plugin/theme
 msgid "Horoscope of the prophets"

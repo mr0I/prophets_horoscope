@@ -17,6 +17,7 @@ define('MYPH_ADMIN', MYPH_ROOTDIR . 'admin/');
 define('MYPH_ADMIN_JS', plugin_dir_url(__FILE__) . 'admin/static/js/');
 define('MYPH_SITE_JS', plugin_dir_url(__FILE__) . 'site/static/js/');
 define('MYPH_SITE_CSS', plugin_dir_url(__FILE__) . 'site/static/css/');
+define('MYPH_SITE_IMAGES', plugin_dir_url(__FILE__) . 'site/static/images/');
 define('MYPH_HOROSCOPES_TBL', 'horoscopes');
 
 
@@ -35,7 +36,12 @@ add_action('wp_enqueue_scripts', function () {
         'SECURITY' => wp_create_nonce('Dnt3dUF8U4FRBNt3'),
         'REQUEST_TIMEOUT' => 30000,
         'SUBMIT_BTN_TXT' => __('Prophets online horoscope', 'prophets_horoscope'),
-        'WAITING_TXT' => __('Please Wait...', 'prophets_horoscope')
+        'WAITING_TXT' => __('Please Wait...', 'prophets_horoscope'),
+        'PROPHET_PIC_SRC' => MYPH_SITE_IMAGES . 'anbia/prophet_1.png',
+        'PROPHETS_HOROSCOPE_PICTURE' => __('Prophets Horoscope Picture', 'prophets_horoscope'),
+        'HOROSCOPE_RESULT' => __('Horoscope Result:', 'prophets_horoscope'),
+        'LUCKY_DAY_FOR_YOU' => __('Lucky Day for you:', 'prophets_horoscope'),
+        'HOROSCOPE_AGAIN' => __('Horoscope Again', 'prophets_horoscope'),
     ));
 });
 

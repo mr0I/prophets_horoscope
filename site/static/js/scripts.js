@@ -21,13 +21,33 @@ function loadRandomHoroscope(event) {
             jq(submitBtn).text(MYPH_SITE_AJAX.WAITING_TXT).attr('disabled', true);
         },
         success: (res, xhr) => {
-            console.log(res);
             if (xhr) {
-                jq('#horoscope_answer_title').text(res.data.h_name);
+                const answerSection = document.getElementById('horoscope_answer_section');
+                jq(answerSection).append(`
+                    <div class="horoscope-content">
+                        <figure>
+                            <img src="${MYPH_SITE_AJAX.PROPHET_PIC_SRC}" alt="">
+                        </figure>
+                        <h3 class="horoscope-content__title" id="horoscope_answer_title">
+                            ${res.data.h_name}
+                        </h3>
+                        <p>${MYPH_SITE_AJAX.HOROSCOPE_RESULT}&nbsp;&nbsp;<span class="text-green">${res.data.h_result}</span>&nbsp;</p>
+                        ${(res.data.h_luckyday != '-' && res.data.h_luckyday != '')
+                        ? `<p>${MYPH_SITE_AJAX.LUCKY_DAY_FOR_YOU}&nbsp;&nbsp;<span class="text-red">${res.data.h_luckyday}</span>&nbsp;</p>`
+                        : ''
+                    }
+                        <p class="horoscope-content__dobeity">${res.data.h_dobeity}</p>
+                        <p class="horoscope-content__desc">${res.data.h_description}</p>
+                        <button class="horoscope-content__submitBtn" onclick="horoscopeAgain(event)">
+                            ${MYPH_SITE_AJAX.HOROSCOPE_AGAIN}
+                        </button>
+                    </div>
+                `);
+
                 setTimeout(() => {
                     jq('.horoscope').slideUp(400);
-                    jq('.horoscope.horoscope-answer').slideDown(200);
-                }, 500);
+                    jq(answerSection).slideDown(200);
+                }, 400);
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
@@ -43,6 +63,8 @@ function loadRandomHoroscope(event) {
 
 function horoscopeAgain(event) {
     event.preventDefault();
-    jq('.horoscope').slideDown(200);
-    jq('.horoscope.horoscope-answer').slideUp(400);
+    const answerSection = document.getElementById('horoscope_answer_section');
+    answerSection.innerHTML = '';
+    jq('.horoscope').slideDown(400);
+    jq(answerSection).slideUp(400);
 }
