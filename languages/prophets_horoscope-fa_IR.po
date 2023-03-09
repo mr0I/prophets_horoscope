@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Horoscope of the prophets\n"
-"POT-Creation-Date: 2023-03-08 11:57+0330\n"
-"PO-Revision-Date: 2023-03-08 11:58+0330\n"
+"POT-Creation-Date: 2023-03-09 15:57+0330\n"
+"PO-Revision-Date: 2023-03-09 15:57+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -21,27 +21,47 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: main.php:38 site/templates/horoscopeWidget.php:19
+#: admin/admin_process.php:8 admin/admin_process.php:9
+msgid "Prophets Horoscope Settings"
+msgstr "تنظیمات فال انبیا"
+
+#: admin/pages/settings.php:11
+msgid "Settings Saved."
+msgstr "تنظیمات ذخیره شد."
+
+#: admin/pages/settings.php:16
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: admin/pages/settings.php:18
+msgid "Main Settings"
+msgstr "تنظیمات اصلی"
+
+#: admin/pages/settings.php:33
+msgid "Save Settings"
+msgstr "ذخیره تنظیمات"
+
+#: main.php:39 site/templates/horoscopeWidget.php:19
 msgid "Prophets online horoscope"
 msgstr "فال آنلاین انبیا"
 
-#: main.php:39
+#: main.php:40
 msgid "Please Wait..."
 msgstr "شکیبا باشید..."
 
-#: main.php:41 site/templates/horoscopeWidget.php:8
+#: main.php:42 site/templates/horoscopeWidget.php:8
 msgid "Prophets Horoscope Picture"
 msgstr "تصویر فال انبیا"
 
-#: main.php:42
+#: main.php:43
 msgid "Horoscope Result:"
 msgstr "نتیجه فال:"
 
-#: main.php:43
+#: main.php:44
 msgid "Lucky Day for you:"
 msgstr "روز خوش یمن برای شما:"
 
-#: main.php:44
+#: main.php:45
 msgid "Horoscope Again"
 msgstr "فال مجدد انبیا"
 
@@ -62,8 +82,8 @@ msgid "http://localhost"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "---"
-msgstr ""
+msgid "Use [insert_horoscope] to view horoscope shortcode on the page."
+msgstr "برای نمایش فال، از کد کوتاه [insert_horoscope] استفاده نمایید."
 
 #. Author of the plugin/theme
 msgid "ZeroOne"

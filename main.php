@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Horoscope of the prophets
  * Plugin URI:  http://localhost
- * Description: برای نمایش فال، از کد کوتاه [insert_horoscope] استفاده نمایید.
+ * Description: Use [insert_horoscope] to view horoscope shortcode on the page.
  * Version: 1.0.0
  * Author: ZeroOne
  * Author URI: https://github.com/tuderiewsc
@@ -14,6 +14,7 @@ defined('ABSPATH') or die('No script kiddies please!');
 define('MYPH_ROOTDIR', plugin_dir_path(__FILE__));
 define('MYPH_INC', MYPH_ROOTDIR . 'includes/');
 define('MYPH_ADMIN', MYPH_ROOTDIR . 'admin/');
+define('MYPH_ADMIN_PAGES', MYPH_ROOTDIR . 'admin/pages/');
 define('MYPH_ADMIN_JS', plugin_dir_url(__FILE__) . 'admin/static/js/');
 define('MYPH_SITE_JS', plugin_dir_url(__FILE__) . 'site/static/js/');
 define('MYPH_SITE_CSS', plugin_dir_url(__FILE__) . 'site/static/css/');
@@ -52,4 +53,5 @@ register_deactivation_hook(__FILE__, 'MYPH_deactivate_function');
 include(MYPH_INC . 'shortcodes.php');
 if (is_admin()) {
     include(MYPH_ADMIN . 'ajax_requests.php');
+    include(MYPH_ADMIN . 'admin_process.php');
 }

@@ -19,9 +19,9 @@ function MYPH_deactivate_function()
 
 function prophetsHoroscopeUninstall()
 {
-    //if (get_option('should_delete_myph_db')) {
-    global $wpdb;
-    $table = $wpdb->prefix . MYPH_HOROSCOPES_TBL;
-    $wpdb->query("DROP TABLE IF EXISTS ${table}");
-    //}
+    if (get_option('should_delete_myph_db')) {
+        global $wpdb;
+        $table = $wpdb->prefix . MYPH_HOROSCOPES_TBL;
+        $wpdb->query("DROP TABLE IF EXISTS ${table}");
+    }
 }
