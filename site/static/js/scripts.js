@@ -64,7 +64,7 @@ function loadRandomHoroscope(event) {
                 setTimeout(() => {
                     jq('.horoscope').slideUp(400);
                     jq(answerSection).slideDown(200);
-                }, 400);
+                }, 150);
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
@@ -80,7 +80,11 @@ function loadRandomHoroscope(event) {
 function horoscopeAgain(event) {
     event.preventDefault();
     const answerSection = document.getElementById('horoscope_answer_section');
+    const horoscopeSection = jq('.horoscope');
     answerSection.innerHTML = '';
-    jq('.horoscope').slideDown(300);
+    jq(horoscopeSection).slideDown(300);
     jq(answerSection).slideUp(400);
+    setTimeout(() => {
+        $(horoscopeSection).get(0).scrollIntoView({ behavior: 'smooth' });
+    }, 500);
 }
