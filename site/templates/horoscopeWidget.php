@@ -3,7 +3,7 @@
 
 <section class="horoscope">
     <div class="horoscope-content">
-        <h3 class="horoscope-content__title"><?= __('Prophets Horoscope', 'prophets_horoscope') ?></h3>
+        <h2 class="horoscope-content__title"><?= __('Prophets Horoscope', 'prophets_horoscope') ?></h2>
         <figure>
             <img src="<?= plugins_url('static/images/anbia_img.png', dirname(__FILE__)) ?>" alt="<?= __('Prophets Horoscope Picture', 'prophets_horoscope') ?>">
         </figure>

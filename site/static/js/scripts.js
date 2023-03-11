@@ -46,14 +46,18 @@ function loadRandomHoroscope(event) {
                         <h3 class="horoscope-content__title" id="horoscope_answer_title">
                             ${res.data.h_name}
                         </h3>
-                        <p>${MYPH_SITE_AJAX.HOROSCOPE_RESULT}&nbsp;&nbsp;<span class="${luckyDayTextClass}" style="font-weight: 600;">${res.data.h_result}</span>&nbsp;</p>
+                        <h4>${MYPH_SITE_AJAX.HOROSCOPE_RESULT}
+                            <span class="text-green" style="font-weight: 600">${res.data.h_result}</span>
+                        </h4>
                         ${(res.data.h_luckyday != '-' && res.data.h_luckyday != '')
-                        ? `<p>${MYPH_SITE_AJAX.LUCKY_DAY_FOR_YOU}&nbsp;&nbsp;<span class="text-default">${res.data.h_luckyday}</span>&nbsp;</p>`
+                        ? `<h3>${MYPH_SITE_AJAX.LUCKY_DAY_FOR_YOU}<span class="text-default">&nbsp;${res.data.h_luckyday}</span></h3>`
                         : ''
                     }
-                        <p class="horoscope-content__dobeity">${res.data.h_beitOne}</p>
-                        <p style="margin:0"><span class="text-green">❆❆❆</span></p>
-                        <p class="horoscope-content__dobeity">${res.data.h_beitTwo}</p>
+                        <p class="horoscope-content__dobeity" style="margin-top:20px">${res.data.h_mesraOne}</p>
+                        <p class="horoscope-content__dobeity">${res.data.h_mesraTwo}</p>
+                        <p style="margin:0"><span class="text-green">${res.data.h_separator}</span></p>
+                        <p class="horoscope-content__dobeity">${res.data.h_mesraThree}</p>
+                        <p class="horoscope-content__dobeity">${res.data.h_mesraFour}</p>
                         <p class="horoscope-content__desc">${res.data.h_description}</p>
                         <button class="horoscope-content__submitBtn" onclick="horoscopeAgain(event)">
                             ${MYPH_SITE_AJAX.HOROSCOPE_AGAIN}

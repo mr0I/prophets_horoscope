@@ -1,8 +1,8 @@
 .horoscope {
     max-width: 96%;
     margin: 15px auto 50px auto;
-    // font-family: vazir;
-    font-family: inherit;
+    font-family: vazir;
+    // font-family: inherit;
 
     .horoscope-content {
         display: flex;
@@ -18,10 +18,21 @@
         h3 {
             color: $textColorDark;
             font-weight: 700;
-            font-size: 1.5em;
+            font-size: 115%;
             font-family: inherit;
-            margin-bottom: 0;
-            padding: 13px;
+        }
+
+        h4 {
+            font-size: 100%;
+            font-weight: bold;
+        }
+
+        h2,
+        h3,
+        h4 {
+            font-family: inherit;
+            margin: 0;
+            padding: 8px;
         }
 
         figure {
@@ -49,20 +60,19 @@
 
         .horoscope-content__submitBtn {
             margin-bottom: 20px;
-            padding: 5px 50px;
+            padding: 4px 40px;
             background-color: $btnBackColor;
             border: 2px solid $backgroundColor;
             border-radius: 4px;
-            color: $textColorNormal;
+            color: #eee;
             font-weight: 500;
             cursor: pointer;
             box-shadow: 0 5px 5px rgb(0 0 0 / 15%);
-            font-size: 1em;
-            font-weight: 600;
             font-family: inherit;
+            font-size: 100%;
 
             &:hover {
-                box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+                opacity: 0.95;
             }
 
             &:disabled {
@@ -81,28 +91,36 @@
             margin: 16px auto;
         }
 
-        p {
-            span.text-green {
-                color: $successColor;
-            }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: inherit;
+            color: $textColorDark;
+        }
 
-            span.text-red {
-                color: $dangerColor;
-            }
+        span.text-green {
+            color: $successColor;
+        }
 
-            span.text-blue {
-                color: $primaryColor;
-            }
+        span.text-red {
+            color: $dangerColor;
+        }
 
-            span.text-default {
-                color: $textColorNormal;
-            }
+        span.text-blue {
+            color: $primaryColor;
+        }
+
+        span.text-default {
+            color: $textColorPink;
         }
 
         p.horoscope-content__dobeity {
             color: $dangerColor;
             font-weight: lighter;
-            font-size: 0.85em;
+            font-size: 85%;
             margin: 0;
             text-align: center;
         }
