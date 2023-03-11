@@ -89,6 +89,6 @@ function horoscopeAgain(event) {
     jq(horoscopeSection).slideDown(300);
     jq(answerSection).slideUp(400);
     setTimeout(() => {
-        $(horoscopeSection).get(0).scrollIntoView({ behavior: 'smooth' });
+        jq(horoscopeSection).get(0).scrollIntoView({ behavior: 'smooth' });
     }, 500);
 }

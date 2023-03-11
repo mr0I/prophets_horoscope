@@ -23,6 +23,11 @@ function fetchHoroscopes_callback()
     $getOneHoroscopeQuery = $wpdb->prepare("SELECT * FROM $tbl WHERE id=%d", array($randomId));
     $selectedHoroscope = $wpdb->get_row($getOneHoroscopeQuery);
 
+    if (!$selectedHoroscope) {
+        wp_send_json(['data' => null], 400);
+        exit();
+    }
+
     $explode = explode("\n", $selectedHoroscope->h_dobeity);
     $selectedHoroscope->h_mesraOne = $explode[0];
     $selectedHoroscope->h_mesraTwo = $explode[1];
@@ -30,7 +35,9 @@ function fetchHoroscopes_callback()
     $selectedHoroscope->h_mesraThree = $explode[3];
     $selectedHoroscope->h_mesraFour = $explode[4];
 
-    wp_send_json(['data' => $selectedHoroscope, 'explode' => $explode], 200);
+    wp_send_json([
+        'data' => $selectedHoroscope
+    ], 200);
     exit();
 }
 add_action('wp_ajax_fetchHoroscopes', 'fetchHoroscopes_callback');
