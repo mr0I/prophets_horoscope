@@ -4,7 +4,7 @@
  * Plugin Name: Horoscope of the prophets
  * Plugin URI:  http://localhost
  * Description: Use [insert_horoscope] to view horoscope shortcode on the page.
- * Version: 1.0.0
+ * Version: 1.0.4
  * Author: ZeroOne
  * Author URI: https://github.com/tuderiewsc
  * Text Domain: prophets_horoscope
@@ -26,12 +26,16 @@ add_action('plugins_loaded', function () {
     load_plugin_textdomain('prophets_horoscope', false, basename(MYPH_ROOTDIR) . '/languages/');
 });
 
-add_action('admin_enqueue_scripts', function () {
-});
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('myph-main-styles', MYPH_SITE_CSS . 'styles.css', array(), '1.0.3');
+if (!function_exists('get_plugin_data'))
+    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
-    wp_enqueue_script('myph-main-script', MYPH_SITE_JS . 'scripts.js', array('jquery'), '1.0.3', true);
+
+add_action('wp_enqueue_scripts', function () {
+    $pluginVersion = (get_plugin_data(__FILE__, false))['Version'];
+
+    wp_enqueue_style('myph-main-styles', MYPH_SITE_CSS . 'styles.css', array(), $pluginVersion);
+
+    wp_enqueue_script('myph-main-script', MYPH_SITE_JS . 'scripts.js', array('jquery'), $pluginVersion, true);
     wp_localize_script('myph-main-script', 'MYPH_SITE_AJAX', array(
         'AJAXURL' => admin_url('admin-ajax.php'),
         'SECURITY' => wp_create_nonce('Dnt3dUF8U4FRBNt3'),
