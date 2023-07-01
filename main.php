@@ -4,7 +4,7 @@
  * Plugin Name: Horoscope of the prophets
  * Plugin URI:  http://localhost
  * Description: Use [insert_horoscope] to view horoscope shortcode on the page.
- * Version: 1.0.5
+ * Version: 1.1.0
  * Author: ZeroOne
  * Author URI: https://github.com/tuderiewsc
  * Text Domain: prophets_horoscope
@@ -34,25 +34,6 @@ add_action('admin_enqueue_scripts', function () {
     $pluginVersion = (get_plugin_data(__FILE__, false))['Version'];
 
     wp_enqueue_style('myph-admin-styles', MYPH_ADMIN_CSS . 'admin-styles.css', array(), $pluginVersion);
-});
-add_action('wp_enqueue_scripts', function () {
-    $pluginVersion = (get_plugin_data(__FILE__, false))['Version'];
-
-    wp_enqueue_style('myph-main-styles', MYPH_SITE_CSS . 'styles.css', array(), $pluginVersion);
-
-    wp_enqueue_script('myph-main-script', MYPH_SITE_JS . 'scripts.js', array('jquery'), $pluginVersion, true);
-    wp_localize_script('myph-main-script', 'MYPH_SITE_AJAX', array(
-        'AJAXURL' => admin_url('admin-ajax.php'),
-        'SECURITY' => wp_create_nonce('Dnt3dUF8U4FRBNt3'),
-        'REQUEST_TIMEOUT' => 30000,
-        'SUBMIT_BTN_TXT' => __('Prophets online horoscope', 'prophets_horoscope'),
-        'WAITING_TXT' => __('Please Wait...', 'prophets_horoscope'),
-        'PROPHET_PIC_SRC' => MYPH_SITE_IMAGES . 'anbia/prophet_1.png',
-        'PROPHETS_HOROSCOPE_PICTURE' => __('Prophets Horoscope Picture', 'prophets_horoscope'),
-        'HOROSCOPE_RESULT' => __('Horoscope Result:', 'prophets_horoscope'),
-        'LUCKY_DAY_FOR_YOU' => __('Lucky Day for you:', 'prophets_horoscope'),
-        'HOROSCOPE_AGAIN' => __('Horoscope Again', 'prophets_horoscope'),
-    ));
 });
 
 /** Inits */
